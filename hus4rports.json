@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 7770,
+        "Ref": "ServerPort",
+        "Name": "Game Port",
+        "Description": "HUS-4R game traffic (UDP)"
+    }
+]

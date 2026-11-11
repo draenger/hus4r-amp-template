@@ -1,0 +1,18 @@
+[
+    {
+        "UpdateStageName": "HUS-4R Launcher Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd '{{$FullBaseDir}}' && U='{{DownloadUser}}'; P='{{DownloadPassword}}'; B='{{DownloadBase}}'; case \\\"$B\\\" in */) ;; *) B=\\\"$B/\\\";; esac; get() { if command -v wget >/dev/null 2>&1; then wget -q --user=\\\"$U\\\" --password=\\\"$P\\\" -O \\\"$2\\\" \\\"$1\\\"; else curl -fsSL -u \\\"$U:$P\\\" -o \\\"$2\\\" \\\"$1\\\"; fi; }; if get \\\"${B%latest/}hus4r.sh\\\" hus4r.sh.new; then mv -f hus4r.sh.new hus4r.sh && chmod +x hus4r.sh && echo 'HUS-4R launcher downloaded'; else rm -f hus4r.sh.new; echo 'HUS-4R: download failed - check Download Address / Login / Password'; exit 1; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "HUS-4R Server Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd '{{$FullBaseDir}}' && U='{{DownloadUser}}'; P='{{DownloadPassword}}'; B='{{DownloadBase}}'; case \\\"$B\\\" in */) ;; *) B=\\\"$B/\\\";; esac; HUS4R_BASE=\\\"$B\\\" DL_USER=\\\"$U\\\" DL_PASSWORD=\\\"$P\\\" HUS4R_AUTOUPDATE=1 ./hus4r.sh update\"",
+        "SkipOnFailure": false
+    }
+]
