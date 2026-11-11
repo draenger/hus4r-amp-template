@@ -3,7 +3,7 @@
 	"authors": ["HUS-4R"],
 	"origin": "https://github.com/draenger/hus4r-amp-template.git",
 	"url": "https://github.com/draenger/hus4r-amp-template",
-	"imagefile": "",
+	"imagefile": "hus4r.jpg",
 	"prefix": "",
 	"repotype": "AppTemplates"
 }
